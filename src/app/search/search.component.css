@@ -1,0 +1,28 @@
+div {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+div input {
+    border-radius: 20px 0px 0px 20px;
+    border: none;
+    background-color: rgb(233, 228, 228);
+    height: 3rem;
+    width: 20rem;
+    padding: 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+}
+
+div button {
+    width: 3rem;
+    font-size: 1.7rem;
+
+    background-color: rgb(243, 162, 12);
+    outline: none;
+    border: none;
+    color: rgb(65, 62, 62);
+}

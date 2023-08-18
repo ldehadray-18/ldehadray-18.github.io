@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { foods } from 'src/app/shared/model/food';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +7,19 @@ import { Injectable } from '@angular/core';
 export class FoodService {
 
   constructor() { }
+  getAllTags(tag: string): foods[] {
+    return tag == 'All' ? this.getAll() : this.getAll().filter(food => food.tags.includes('tag'));
+  }
+  getTag() {
+    return [
+      { name: 'all' },
+      { name: 'soup' },
+      { name: 'pizza' },
+      { name: 'lunch' },
+      { name: 'fastFood' },
+      { name: 'chay' }];
+
+  }
 
   getAll() {
     return [
@@ -37,7 +51,7 @@ export class FoodService {
         name: 'burgar combo',
         favoirate: true,
         star: 4.0,
-        tags: ['burgar', 'fastFood'],
+        tags: ['burgar', 'fast'],
         imageUrl: '/assets/food3.jpg',
         cookTime: '20-25',
         origins: ['indian', 'rushian']
@@ -48,7 +62,7 @@ export class FoodService {
         name: 'chinies bhel',
         favoirate: true,
         star: 4.0,
-        tags: ['burgar', 'fastFood'],
+        tags: ['burga'],
         imageUrl: '/assets/food4.jpg',
         cookTime: '20-25',
         origins: ['indian', 'rushian']
@@ -59,7 +73,7 @@ export class FoodService {
         name: 'vada pav',
         favoirate: false,
         star: 4.0,
-        tags: ['burgar', 'fastFood'],
+        tags: ['burgar'],
         imageUrl: '/assets/food5.jpg',
         cookTime: '20-25',
         origins: ['indian', 'rushian']
@@ -70,7 +84,7 @@ export class FoodService {
         name: 'french fries',
         favoirate: false,
         star: 3.9,
-        tags: ['burgar', 'fastFood'],
+        tags: ['burgar'],
         imageUrl: '/assets/food6.webp',
         cookTime: '20-25',
         origins: ['indian', 'rushian']

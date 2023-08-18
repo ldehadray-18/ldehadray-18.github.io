@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FoodService } from './services/food/food.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FoodOrder';
+  tag: any = [];
+  constructor(private fs: FoodService) { }
+  ngOnInit(): void {
+    this.tag = this.fs.getAll;
+  }
 }
